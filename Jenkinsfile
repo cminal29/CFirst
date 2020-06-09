@@ -14,10 +14,8 @@ pipeline {
               cleanBuild()		
               buildDir(build)
               sourceDir(CFirst)
-              cmakeInstallation('InSearchPath')
-              steps{
-          [args: 'all install', envVars: 'DESTDIR=${WORKSPACE}/artifacts']}
-            }
+              installation('InSearchPath')
+              
         }
 	}
 }
