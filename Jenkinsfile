@@ -10,11 +10,11 @@ pipeline {
 	stages {
         stage('Build') {
             steps {
-              generator('Unix Makefiles')
+                cmakeBuild(
+	      generator('Unix Makefiles')
               cleanBuild()		
               buildDir(build)
               sourceDir(CFirst)
-              cmakeBuild(
             	installation: 'InSearchPath'
               )
               
