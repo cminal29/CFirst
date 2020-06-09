@@ -10,11 +10,11 @@ pipeline {
 	stages {
         stage('Build') {
             steps {
-              generator: 'Unix Makefiles',
-              cleanBuild(),		
-              buildDir: 'build',
-              sourceDir: 'source',
-              installation: 'InSearchPath',
+              generator('Unix Makefiles')
+              cleanBuild()		
+              buildDir(build')
+              sourceDir(CFirst)
+              cmakeInstallation('InSearchPath')
               steps: [
           [args: 'all install', envVars: 'DESTDIR=${WORKSPACE}/artifacts']
       ]
