@@ -10,7 +10,7 @@ pipeline {
 	stages {
         stage('Build') {
             steps {
-              generator('Unix Makefiles'),
+              generator: 'Unix Makefiles',
               cleanBuild(),		
               buildDir: 'build',
               sourceDir: 'source',
