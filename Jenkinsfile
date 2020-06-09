@@ -9,8 +9,15 @@ pipeline {
 
 	stages {
         stage('Build') {
-            steps {		
-              installation: 'InSearchPath'
+            steps {
+              generator('Unix Makefiles'),
+              cleanBuild(),		
+              buildDir: 'build',
+              sourceDir: 'source',
+              installation: 'InSearchPath',
+              steps: [
+          [args: 'all install', envVars: 'DESTDIR=${WORKSPACE}/artifacts']
+      ]
             }
         }
 	}
