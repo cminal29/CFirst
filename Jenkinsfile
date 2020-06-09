@@ -10,7 +10,16 @@ pipeline {
 	stages {
         stage('Build') {
             steps {
-              sh 'python --version'
+              sh 'python --version'		
+	      cmakeBuild
+      	      generator: 'Ninja',
+              buildDir: 'build',
+              sourceDir: 'CFirst',
+              installation: 'InSearchPath',
+              steps: [
+          	[args: 'all install', envVars: 'DESTDIR=${WORKSPACE}/artifacts']
+              ]
+
             }
         }
 	}
