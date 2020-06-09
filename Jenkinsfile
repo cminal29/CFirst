@@ -12,7 +12,6 @@ pipeline {
             steps {
                 cmakeBuild(
 	      generator('Unix Makefiles')
-              cleanBuild()		
               buildDir(build)
               sourceDir(CFirst)
             	installation: 'InSearchPath'
