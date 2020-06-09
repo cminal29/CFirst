@@ -14,7 +14,7 @@ pipeline {
               cleanBuild()		
               buildDir(build)
               sourceDir(CFirst)
-              installation('InSearchPath')
+              installation(InSearchPath)
               
         }
 	}
