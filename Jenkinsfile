@@ -12,7 +12,7 @@ pipeline {
             steps {
               generator('Unix Makefiles')
               cleanBuild()		
-              buildDir(build')
+              buildDir(build)
               sourceDir(CFirst)
               cmakeInstallation('InSearchPath')
               steps: [
