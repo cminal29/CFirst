@@ -12,7 +12,6 @@ pipeline {
             steps {
               sh 'python --version'		
 	      cmakeBuild
-      	      generator: 'Ninja',
               buildDir: 'build',
               sourceDir: 'CFirst',
               installation: 'InSearchPath',
