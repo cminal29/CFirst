@@ -14,7 +14,9 @@ pipeline {
               cleanBuild()		
               buildDir(build)
               sourceDir(CFirst)
-              installation(InSearchPath)
+              cmakeBuild(
+            	installation: 'InSearchPath'
+              )
               
         }
 	}
